@@ -450,3 +450,5 @@
 20240520	14:23:06	0db8dfc7-116f-4a61-b02e-2587a16dc5fe	GET	undefined	/employee
 20240520	14:23:44	a321285b-b7d1-4cd2-9de6-18cffbe59c9e	POST	undefined	/auth
 20240520	14:24:08	c38ed471-f2cd-468e-bc33-25fe6db870ad	GET	undefined	/employee/1
+20240520	16:04:29	aee6c5a0-0a61-43d1-a963-a3a82bad4cdd	GET	undefined	/register
+20240520	16:04:48	43010504-9288-4240-bf82-2e7f89fbd205	POST	undefined	/register
