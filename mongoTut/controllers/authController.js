@@ -1,21 +1,12 @@
-//Authentication and authorization are critical components of any security framework, ensuring that only legitimate users gain access to systems and that their actions are controlled according to their permissions.
+//Authentication and authorization are critical components of any security framework, ensuring
+//that only legitimate users gain access to systems and that their actions are controlled according to their permissions.
 
 //Authentication=> purpose is to confirm the identity of a user or system while
 //Authorization=> control access to resources and define what authenticated users can do.
 
-const usersDB = {
-  users: require("../model/users.json"),
-  setUsers: function (data) {
-    this.users = data;
-  },
-};
-
+const User = require("../model/User");
 const bcrypt = require("bcrypt");
-
 const jwt = require("jsonwebtoken");
-
-const fsPromises = require("fs").promises;
-const path = require("path");
 
 const handleLogin = async (req, res) => {
   const { user, pwd } = req.body;
@@ -24,15 +15,14 @@ const handleLogin = async (req, res) => {
       .status(400)
       .json({ message: "Username and password are required!!!" }); //Username & password error message
 
-  const foundUser = usersDB.users.find((person) => person.username === user);
+  const foundUser = await User.findOne({ username: user }).exec();
 
   if (!foundUser) return res.sendStatus(401); // unauthorized
 
   const match = await bcrypt.compare(pwd, foundUser.password);
 
   if (match) {
-    const roles = Object.values(foundUser.roles);
-    console.log(roles);
+    const roles = Object.values(foundUser.roles).filter(Boolean);
 
     // create JWTs
     const accessToken = jwt.sign(
@@ -51,27 +41,22 @@ const handleLogin = async (req, res) => {
       { expiresIn: "1d" }
     );
 
-    const otherUsers = usersDB.users.filter(
-      (person) => person.username !== foundUser.username
-    );
-    const currentUser = { ...foundUser, refreshToken };
-    usersDB.setUsers([...otherUsers, currentUser]);
-    await fsPromises.writeFile(
-      path.join(__dirname, "..", "model", "users.json"),
-      JSON.stringify(usersDB.users)
-    );
+    // Saving refresh token with curent user
+    foundUser.refreshToken = refreshToken
+    const result = await foundUser.save()
+    console.log(result);
+    console.log(roles);
+
+    // Create secure cookie  with fresh token
     res.cookie("jwt", refreshToken, {
-      httpOnly: true,
+      httpOnly: true,       // only webSever can have access to the site only
+       secure:true, sameSite: "none",
       maxAge: 24 * 60 * 60 * 1000,
     });
 
-    res.json({ accessToken });
+    // Send authorization roles and access token to user
 
-  //   res.json({
-  //     success: `User ${user} (Team-Lead) is logged in Successfully!!!`,
-  //   }); // Success message thrw when Successfully logged in
-  // } else {
-  //
+    res.json({roles, accessToken });
   } else {
     res.sendStatus(401);
   }

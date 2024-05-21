@@ -30,4 +30,4 @@ const User = require("../model/User")
     return res.sendStatus(204);
 }
 
-  module.exports = {handleLogout}
+  module.exports = {handleLogout};
