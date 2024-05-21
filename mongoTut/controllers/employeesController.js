@@ -1,8 +1,8 @@
 const Employee = require("../model/Employee")
 
-// const getAllEmployees = async((req, res) => {})
+// const getAllEmployees = async((req, res) => {})  
 const getAllEmployees = async(req, res) => {
-  const employees = await Employee.find()
+  const employees = await Employee.find()   // get all information/data about employee
   if(!employees) return res.status(204).json({"Message": "No employees found"});
   res.json(employees)
 };
@@ -23,13 +23,13 @@ const createNewEmployee = async(req, res) => {
 };
 
 const updateEmployee = async (req, res) => {
-  if(!req?.body?.id) {
-    return res.status(400).json({"message": "ID parameter is required"})
+  if(!req?.body?.id) {      // to use ID to update an employee
+    return res.status(400).json({message: "ID parameter is required"})
   }
-  const employee = await Employees.findOne({_id: req.body.id}).exec()
+  const employee = await Employees.findOne({_id: req.body.id}).exec()   // to use id to update, delete etc, we underscore _ID
   if (!employee) {
-    return res.status(400)
-      .json({ Message: `Employee with the ID: ${req.body.id}`});
+    return res.status(204)
+      .json({ Message: `No Employee with the ID: ${req.body.id}`});
   }
 
   if (req.body.firstname) employee.firstname = req.body.firstname;
@@ -39,7 +39,7 @@ const updateEmployee = async (req, res) => {
 
 }
 const deleteEmployee = async(req, res) => {
-  if(!req?.body?.id) return res.status(400).json({"message": "ID parameter is required"})
+  if(!req?.body?.id) return res.status(400).json({message: "Employee ID is required"})
     constemployee = Employee.findOne({_id: req.body.id}).exec();
 
   if (!employee) {
