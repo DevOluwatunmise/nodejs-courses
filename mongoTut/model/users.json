@@ -1,1 +1,26 @@
-[{"username":"Moses","roles":{"Users":2001,"Editor":1984},"password":"$2b$10$TzfsxH8H0PXoG6b8mij7.uXWWFv0a21W93fgPq../sqAskpddb7g6","refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ik1vc2VzIiwiaWF0IjoxNzE1ODUwODcwLCJleHAiOjE3MTU5MzcyNzB9.kF8Yx_3zOrQpV8YHXNVnwRj9tcIk7OTO0xeKgFACHuk"},{"username":"Akin","roles":{"Users":2001},"password":"$2b$10$RzrD9DrV1H2rT6ABmKZ.4Oxi79NUX90Igb8y4bGKD9svrNv0GGUOm","refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkFraW4iLCJpYXQiOjE3MTU4NTg0MDUsImV4cCI6MTcxNTk0NDgwNX0.6yTZo2w5MAwiVkyIcrKzrNNW6sA6aXrT-N4eCL6Wc1M"},{"username":"URIEL","roles":{"Users":2001},"password":"$2b$10$93oOpWzExC06Daha2lnCY.H/9eCdcYx2P8KKohgF23kMo5V1pNDzC","refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlVSSUVMIiwiaWF0IjoxNzE1ODczOTE4LCJleHAiOjE3MTU5NjAzMTh9.QQnbJ25MLeP6gHHzWI0k-Mq8oY_iOlWQhJMHTdNovqw"},{"username":"Tunmise","roles":{"Users":2001,"Editor":1984,"Admin":5150},"password":"$2b$10$ci8CXAntvmTC/1UOWesUU.7G.DVCqEGQ0GIK3r8hk/BDwQxQYSxMK","refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlR1bm1pc2UiLCJpYXQiOjE3MTYyMTE0MjQsImV4cCI6MTcxNjI5NzgyNH0.RvdPWjdWn8fCd_GIWtOhgT7v9itpIsTmuE6Bf4gfN9E"}]
+[
+  {
+    "username": "Moses",
+    "roles": { "Users": 2001, "Editor": 1984 },
+    "password": "$2b$10$TzfsxH8H0PXoG6b8mij7.uXWWFv0a21W93fgPq../sqAskpddb7g6",
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ik1vc2VzIiwiaWF0IjoxNzE1ODUwODcwLCJleHAiOjE3MTU5MzcyNzB9.kF8Yx_3zOrQpV8YHXNVnwRj9tcIk7OTO0xeKgFACHuk"
+  },
+  {
+    "username": "Akin",
+    "roles": { "Users": 2001 },
+    "password": "$2b$10$RzrD9DrV1H2rT6ABmKZ.4Oxi79NUX90Igb8y4bGKD9svrNv0GGUOm",
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkFraW4iLCJpYXQiOjE3MTU4NTg0MDUsImV4cCI6MTcxNTk0NDgwNX0.6yTZo2w5MAwiVkyIcrKzrNNW6sA6aXrT-N4eCL6Wc1M"
+  },
+  {
+    "username": "URIEL",
+    "roles": { "Users": 2001 },
+    "password": "$2b$10$93oOpWzExC06Daha2lnCY.H/9eCdcYx2P8KKohgF23kMo5V1pNDzC",
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlVSSUVMIiwiaWF0IjoxNzE1ODczOTE4LCJleHAiOjE3MTU5NjAzMTh9.QQnbJ25MLeP6gHHzWI0k-Mq8oY_iOlWQhJMHTdNovqw"
+  },
+  {
+    "username": "Tunmise",
+    "roles": { "Users": 2001, "Editor": 1984, "Admin": 5150 },
+    "password": "$2b$10$ci8CXAntvmTC/1UOWesUU.7G.DVCqEGQ0GIK3r8hk/BDwQxQYSxMK",
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlR1bm1pc2UiLCJpYXQiOjE3MTYyMTE0MjQsImV4cCI6MTcxNjI5NzgyNH0.RvdPWjdWn8fCd_GIWtOhgT7v9itpIsTmuE6Bf4gfN9E"
+  }
+]
