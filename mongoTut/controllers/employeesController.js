@@ -26,7 +26,7 @@ const updateEmployee = async (req, res) => {
   if(!req?.body?.id) {      // to use ID to update an employee
     return res.status(400).json({message: "ID parameter is required"})
   }
-  const employee = await Employees.findOne({_id: req.body.id}).exec()   // to use id to update, delete etc, we underscore _ID
+  const employee = await Employee.findOne({_id: req.body.id}).exec()   // to use id to update, delete etc, we underscore _ID
   if (!employee) {
     return res.status(204)
       .json({ Message: `No Employee with the ID: ${req.body.id}`});
@@ -40,12 +40,14 @@ const updateEmployee = async (req, res) => {
 }
 const deleteEmployee = async(req, res) => {
   if(!req?.body?.id) return res.status(400).json({message: "Employee ID is required"})
-    constemployee = Employee.findOne({_id: req.body.id}).exec();
+    const employee = await Employee.findOne({ _id: req.body.id}).exec();
+ 
+  console.log(employee)
 
   if (!employee) {
     return res
       .status(204)
-      .json({ Message: `No Employee matches ID: ${req.body.id} not foun` });
+      .json({ Message: `No Employee matches ID: ${req.body.id}` });
 
   }
   const result = await employee.deleteOne();
@@ -54,7 +56,7 @@ const deleteEmployee = async(req, res) => {
 };
 
 const getEmployee = async(req, res) => {
-  if (!req?.parames?.id)
+  if (!req?.params?.id)
     return res.status(400).json({message: "Employee ID is required"});
   const employee = await Employee.findOne({_id: req.params.id}).exec();
 

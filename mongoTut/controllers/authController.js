@@ -50,7 +50,7 @@ const handleLogin = async (req, res) => {
     // Create secure cookie  with fresh token
     res.cookie("jwt", refreshToken, {
       httpOnly: true,       // only webSever can have access to the site only
-       secure:true, sameSite: "none",
+       secure: true, sameSite: "none",
       maxAge: 24 * 60 * 60 * 1000,
     });
 

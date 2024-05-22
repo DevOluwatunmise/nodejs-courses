@@ -12,4 +12,4 @@ const employeeSchema = new Schema({
     },
 })
 
-module.exports = mongoose.model('Employee', employeeSchema);
+module.exports = mongoose.model('Employee', employeeSchema);   // any name you use here (e.g Employee) will authomaticaly be used as your collection name in your mongoDB
